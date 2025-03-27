@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>윤쌤에게 질문하기</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #f9f9f9;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      color: #333;
+    }
+    .chat-box {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input[type="file"], textarea {
+      margin-top: 10px;
+    }
+    .response {
+      background: #eee;
+      margin-top: 20px;
+      padding: 10px;
+      border-radius: 8px;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="chat-box">
+    <h1>🧑‍🏫 윤쌤이 왔다~ 뭐든 물어봐라잉 👀</h1>
+    <form method="POST" enctype="multipart/form-data">
+      <textarea name="prompt" rows="4" cols="50" placeholder="궁금한 걸 적어봐~ 예: 이 문제 좀 풀어줘요!"></textarea><br>
+      <input type="file" name="image" accept="image/*"><br><br>
+      <input type="submit" value="질문 보내기 📨">
+    </form>
+
+    {% if response %}
+      <div class="response">
+        <strong>윤쌤:</strong><br>
+        {{ response }}
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>
