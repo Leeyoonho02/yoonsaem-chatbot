@@ -22,7 +22,7 @@ def call_gpt_vision(prompt, image_path=None):
     if image_path:
         with open(image_path, "rb") as image_file:
             response = openai.ChatCompletion.create(
-                model="gpt-4-vision-preview",
+                model="gpt-4o",
                 messages=[
                     {"role": "system", "content": "넌 장난스럽고 친절한 AI 선생님이야. 학생이 이해할 수 있게 설명해줘."},
                     {
